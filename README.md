@@ -1,6 +1,6 @@
 # domodel-popup [![Build Status](https://travis-ci.com/thoughtsunificator/domodel-popup.svg?branch=master)](https://travis-ci.com/thoughtsunificator/domodel-popup)
 
-Pagination system for [domodel](https://github.com/thoughtsunificator/domodel).
+Popup system for [domodel](https://github.com/thoughtsunificator/domodel).
 
 ## Getting started
 
