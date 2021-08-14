@@ -1,0 +1,27 @@
+{
+	"name": "@domodel/popup",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/thoughtsunificator/domodel-popup.git"
+	},
+	"bugs": {
+		"url": "https://github.com/thoughtsunificator/domodel-popup/issues"
+	},
+	"author": "Romain Lebesle <oss@thoughtsunificator.me> (https://thoughtsunificator.me)",
+	"license": "MIT",
+	"type": "module",
+	"devDependencies": {
+		"eslint": "^7.0.0",
+		"jsdom": "^16.6.0"
+	},
+	"main": "index.js",
+	"scripts": {
+		"test": "nodeunit-esm",
+		"generate-docs": "jsdoc --configure .jsdoc.json --verbose",
+		"lint": "eslint src/**/*.js"
+	},
+	"dependencies": {
+		"domodel": "^1.0.5",
+		"nodeunit-esm": "^1.0.2"
+	}
+}

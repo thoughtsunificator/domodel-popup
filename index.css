@@ -1,0 +1,36 @@
+.popup {
+	z-index: 2;
+	height: 100%;
+	width: 100%;
+	grid-auto-rows: max-content;
+	box-sizing: border-box
+}
+
+.popup .close {
+	justify-self: flex-start;
+	padding: 4px 10px
+}
+
+.popup .body {
+	box-sizing: border-box;
+	justify-self: center;
+	padding: 10px;
+	grid-gap: 5px;
+	display: grid
+}
+
+.popup .controls {
+	display: grid;
+	grid-gap: 10px
+}
+
+.popup .footer {
+	display: grid;
+	grid-auto-flow: column;
+	margin-top: 15px;
+	grid-gap: 10px
+}
+
+.popup .footer {
+	padding: 3px 15px
+}
