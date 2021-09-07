@@ -1,11 +1,7 @@
 import { JSDOM } from "jsdom"
 import { Core, Binding } from "domodel"
 
-import PopupModel from "../src/model/popup.js"
-
-import PopupBinding from "../src/model/popup.binding.js"
-
-import Popup from "../src/object/popup.js"
+import { PopupModel, PopupBinding, Popup } from "../index.js"
 
 const virtualDOM = new JSDOM()
 const window = virtualDOM.window
