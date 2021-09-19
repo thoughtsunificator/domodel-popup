@@ -6,6 +6,10 @@
 	box-sizing: border-box
 }
 
+.popup.hidden {
+	visibility: hidden
+}
+
 .popup .close {
 	justify-self: flex-start;
 	padding: 4px 10px
