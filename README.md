@@ -1,4 +1,4 @@
-# domodel-popup [![Build Status](https://travis-ci.com/thoughtsunificator/domodel-popup.svg?branch=master)](https://travis-ci.com/thoughtsunificator/domodel-popup)
+# domodel-popup
 
 Popup system for [domodel](https://github.com/thoughtsunificator/domodel).
 
