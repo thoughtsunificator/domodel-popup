@@ -1,26 +1,23 @@
 import { Binding } from "domodel"
 
-export default class extends Binding {
+import PopupEventListener from "./popup.event.js"
+
+/**
+ * @global
+ */
+class PopupBinding extends Binding {
+
+	/**
+	 * @param {object} properties
+	 * @param {Popup} properties.popup
+	 */
+	constructor(properties) {
+		super(properties, new PopupEventListener(properties.popup))
+	}
 
 	onCreated() {
+
 		const { popup } = this.properties
-
-		this.listen(popup, "show", () => {
-			if(popup.hidden) {
-				popup.emit("hide")
-				popup.hidden = false
-			}
-			this.root.classList.remove("hidden")
-			popup.emit("shown")
-		})
-
-		this.listen(popup, "hide", () => {
-			if(!popup.hidden) {
-				popup.hidden = true
-				this.root.classList.add("hidden")
-				popup.emit("hidden")
-			}
-		})
 
 		this.identifier.close.addEventListener("click", () => popup.emit("hide"))
 		this.root.ownerDocument.defaultView.addEventListener("keydown", event => {
@@ -28,6 +25,9 @@ export default class extends Binding {
 				popup.emit("hide")
 			}
 		})
+
 	}
 
 }
+
+export default PopupBinding

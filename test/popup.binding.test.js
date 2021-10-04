@@ -28,7 +28,7 @@ describe("popup.binding", () => {
 	})
 
 	it("instance", () => {
-		assert.ok(new PopupBinding() instanceof Binding)
+		assert.ok(PopupBinding.prototype instanceof Binding)
 	})
 
 	it("model", () => {

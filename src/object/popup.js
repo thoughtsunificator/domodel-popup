@@ -1,10 +1,10 @@
 import { Observable } from "domodel"
 
+/**
+ * @global
+ */
 class Popup extends Observable {
 
-	/**
-	 * @param {boolean} hidden
-	 */
 	constructor() {
 		super()
 		this._hidden = true
