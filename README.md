@@ -12,10 +12,9 @@ Popup system for [domodel](https://github.com/thoughtsunificator/domodel).
 
 ```javascript
 import { Core, Binding } from "domodel"
-import { PopupModel, Popup } from "@domodel/popup"
+import { PopupModel, PopupBinding, Popup } from "@domodel/popup"
 
 import MyPopupModel from "/model/my-popup.js"
-import MyPopupBinding from "/model/my-popup.binding.js"
 
 export default class extends Binding {
 
@@ -23,7 +22,7 @@ export default class extends Binding {
 
 		const popup = new Popup()
 
-		Core.run(PopupModel(MyPopupModel), { parentNode: this.root, binding: new MyPopupBinding({ popup }) })
+		Core.run(PopupModel(MyPopupModel), { parentNode: this.root, binding: new PopupBinding({ popup }) })
 
 	}
 
