@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>model/popup.binding.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,58 +34,52 @@
 
 <div id="main">
     
+    <h1 class="page-title">model/popup.binding.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Binding } from "domodel"
 
+import PopupEventListener from "./popup.event.js"
 
-    <section class="package">
-        <h3> </h3>		
-    </section>
+/**
+ * @global
+ */
+class PopupBinding extends Binding {
 
-
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1 id="domodel-popup">domodel-popup</h1>
-<p>Popup system for <a href="https://github.com/thoughtsunificator/domodel">domodel</a>.</p>
-<h2 id="getting-started">Getting started</h2>
-<h3 id="installing">Installing</h3>
-<p><code>npm install @domodel/popup</code></p>
-<h3 id="usage">Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import { Core, Binding } from &quot;domodel&quot;
-import { PopupModel, Popup } from &quot;@domodel/popup&quot;
-
-import MyPopupModel from &quot;/model/my-popup.js&quot;
-import MyPopupBinding from &quot;/model/my-popup.binding.js&quot;
-
-export default class extends Binding {
+	/**
+	 * @param {object} properties
+	 * @param {Popup} properties.popup
+	 */
+	constructor(properties) {
+		super(properties, new PopupEventListener(properties.popup))
+	}
 
 	onCreated() {
 
-		const popup = new Popup()
+		const { popup } = this.properties
 
-		Core.run(PopupModel(MyPopupModel), { parentNode: this.root, binding: new MyPopupBinding({ popup }) })
+		this.identifier.close.addEventListener("click", () => popup.emit("hide"))
+		this.root.ownerDocument.defaultView.addEventListener("keydown", event => {
+			if(event.keyCode === 27) {
+				popup.emit("hide")
+			}
+		})
 
 	}
 
 }
-</code></pre></article>
+
+export default PopupBinding
+</code></pre>
+        </article>
     </section>
-
-
 
 
 

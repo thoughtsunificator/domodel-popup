@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>Home - Documentation</title>
+    <title>object/popup.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,58 +34,45 @@
 
 <div id="main">
     
+    <h1 class="page-title">object/popup.js</h1>
+    
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { Observable } from "domodel"
 
+class Popup extends Observable {
 
-    <section class="package">
-        <h3> </h3>		
-    </section>
+	/**
+	 * @param {boolean} hidden
+	 */
+	constructor() {
+		super()
+		this._hidden = true
+	}
 
+	/**
+	 * @type {boolean}
+	 */
+	get hidden() {
+		return this._hidden
+	}
 
-
-
-
-
-
-
-
-    
-
-
-
-    <section class="readme usertext">
-        <article><h1 id="domodel-popup">domodel-popup</h1>
-<p>Popup system for <a href="https://github.com/thoughtsunificator/domodel">domodel</a>.</p>
-<h2 id="getting-started">Getting started</h2>
-<h3 id="installing">Installing</h3>
-<p><code>npm install @domodel/popup</code></p>
-<h3 id="usage">Usage</h3>
-<pre class="prettyprint source lang-javascript"><code>import { Core, Binding } from &quot;domodel&quot;
-import { PopupModel, Popup } from &quot;@domodel/popup&quot;
-
-import MyPopupModel from &quot;/model/my-popup.js&quot;
-import MyPopupBinding from &quot;/model/my-popup.binding.js&quot;
-
-export default class extends Binding {
-
-	onCreated() {
-
-		const popup = new Popup()
-
-		Core.run(PopupModel(MyPopupModel), { parentNode: this.root, binding: new MyPopupBinding({ popup }) })
-
+	set hidden(hidden) {
+		this._hidden = hidden
 	}
 
 }
-</code></pre></article>
+
+export default Popup
+</code></pre>
+        </article>
     </section>
-
-
 
 
 
