@@ -6,7 +6,15 @@ import { EventListener } from "domodel"
 class PopupEventListener extends EventListener {
 
 	/**
-	 *
+	 * @event PopupEventListener#shown
+	 */
+
+	/**
+	 * @event PopupEventListener#hidden
+	 */
+
+	/**
+	 * @event PopupEventListener#show
 	 */
 	show() {
 		const { popup } = this.properties
@@ -20,7 +28,7 @@ class PopupEventListener extends EventListener {
 	}
 
 	/**
-	 *
+	 * @event PopupEventListener#hide
 	 */
 	hide() {
 		const { popup } = this.properties
