@@ -9,7 +9,7 @@ class PopupBinding extends Binding {
 
 	/**
 	 * @param {object} properties
-	 * @param {Popup} properties.popup
+	 * @param {Popup}  properties.popup
 	 */
 	constructor(properties) {
 		super(properties, new PopupEventListener(properties.popup))
