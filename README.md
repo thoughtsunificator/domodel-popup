@@ -18,13 +18,13 @@ import MyPopupModel from "/model/my-popup.js"
 
 export default class extends Binding {
 
-	onCreated() {
+  onCreated() {
 
-		const popup = new Popup()
+    const popup = new Popup()
 
-		Core.run(PopupModel(MyPopupModel), { parentNode: this.root, binding: new PopupBinding({ popup }) })
+    Core.run(PopupModel(MyPopupModel), { parentNode: this.root, binding: new PopupBinding({ popup }) })
 
-	}
+  }
 
 }
 ```
